@@ -46,9 +46,9 @@ description: Rust modular Point of Sales system supporting multi-store, multi-ca
           <p>Seamlessly handle multiple physical stores, warehouses, and locations under a unified system controller.</p>
         </div>
         <div class="card">
-          <div class="icon">👥</div>
-          <h3>Multi-Cashier</h3>
-          <p>Assign separate registers, manage roles, and keep complete audit trails for every shift and checkout activity.</p>
+          <div class="icon">📊</div>
+          <h3>Live Analytics</h3>
+          <p>Real-time sales tracking, instant push notifications, and visual metrics dashboards updating by the second.</p>
         </div>
         <div class="card">
           <div class="icon">📦</div>
@@ -59,6 +59,16 @@ description: Rust modular Point of Sales system supporting multi-store, multi-ca
           <div class="icon">☁️</div>
           <h3>Cloud Sync</h3>
           <p>Offline-first operation. Runs locally when internet drops and syncs cleanly back to the cloud when online.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📧</div>
+          <h3>Automated Reports</h3>
+          <p>Receive scheduled daily, weekly, or monthly email reports detailing sales, margins, and performance metrics.</p>
+        </div>
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Detailed User Activity</h3>
+          <p>Complete audit trails tracking cashier shifts, managers' overrides, register balances, and active sessions.</p>
         </div>
       </div>
     </section>
@@ -85,8 +95,13 @@ description: Rust modular Point of Sales system supporting multi-store, multi-ca
   },
   modules = {
     inventory = <span class="keyword">true</span>,
-    cashier_audit = <span class="keyword">true</span>,
-    analytics = <span class="keyword">true</span>,
+    user_activity_logs = <span class="keyword">true</span>, <span class="comment">-- track detailed sessions</span>
+    live_analytics = <span class="keyword">true</span>,     <span class="comment">-- real-time dashboard data</span>
+    email_reports = {
+      enabled = <span class="keyword">true</span>,
+      frequency = <span class="string">"daily"</span>,     <span class="comment">-- "daily" | "weekly" | "monthly"</span>
+      recipients = {<span class="string">"owner@store.com"</span>, <span class="string">"manager@store.com"</span>}
+    },
     cloud_sync = {
       enabled = <span class="keyword">true</span>,
       interval_seconds = <span class="keyword">60</span>,
