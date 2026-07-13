@@ -27,6 +27,13 @@ body {
   font-family: 'Outfit', sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 /* Header */
@@ -293,7 +300,8 @@ pre {
 footer {
   border-top: 1px solid var(--border);
   background: rgba(7, 9, 14, 0.95);
-  margin-top: 6rem;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .footer-container {
