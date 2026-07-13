@@ -1,0 +1,12 @@
+title: kardelitaitu
+email: your-email@domain.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to the personal digital workspace of kardelitaitu. Discover projects, creations, and ideas.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://kardelitaitu.github.io"
+
+# Build settings
+theme: []
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
