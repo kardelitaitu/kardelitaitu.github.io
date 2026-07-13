@@ -20,8 +20,8 @@ layout: null
       width: 250px;
       flex-shrink: 0;
       position: sticky;
-      top: 100px;
-      height: calc(100vh - 150px);
+      top: 2rem;
+      height: calc(100vh - 200px);
       overflow-y: auto;
     }
     .docs-sidebar h3 {
@@ -49,6 +49,7 @@ layout: null
     }
     .docs-content {
       flex: 1;
+      padding-bottom: 5rem;
     }
     .docs-section {
       margin-bottom: 4rem;
@@ -105,7 +106,7 @@ layout: null
     </div>
   </header>
 
-  <div class="docs-wrapper">
+  <main class="docs-wrapper">
     <aside class="docs-sidebar">
       <h3>Getting Started</h3>
       <ul>
@@ -119,7 +120,7 @@ layout: null
       </ul>
     </aside>
 
-    <main class="docs-content">
+    <div class="docs-content">
       <section class="docs-section" id="intro">
         <h2>Introduction</h2>
         <p>
@@ -152,8 +153,8 @@ layout: null
           Custom discounts are configured dynamically using standard Lua script syntax. Write your customized discount functions inside the <code>calculate_discount</code> trigger, which takes a <code>cart</code> parameters table and computes the markdown balance.
         </p>
       </section>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <footer>
     <div class="footer-container">
