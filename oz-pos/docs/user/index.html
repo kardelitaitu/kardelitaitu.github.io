@@ -1,0 +1,137 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Manual | oz-pos Documentation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .docs-wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+    }
+    .docs-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 2rem;
+      height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+    .docs-sidebar h3 {
+      font-size: 0.9rem;
+      color: var(--rust);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .docs-sidebar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .docs-sidebar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .docs-sidebar a:hover {
+      color: var(--text-main);
+    }
+    .docs-content {
+      flex: 1;
+      padding-bottom: 5rem;
+    }
+    .docs-section {
+      margin-bottom: 4rem;
+    }
+    .docs-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .docs-section p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="../../index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../architecture.html">Architecture</a></li>
+        <li><a href="../../pricing.html">Pricing</a></li>
+        <li><a href="../index.html" style="color: var(--text-main);">Documentation</a></li>
+        <li><a href="../../contact.html">Contact Us</a></li>
+      </ul>
+      <a href="../../pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <div class="docs-wrapper">
+    <aside class="docs-sidebar">
+      <h3>User Manual</h3>
+      <ul>
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#stores">Managing Stores</a></li>
+        <li><a href="#cashiers">Cashier Shifts</a></li>
+        <li><a href="#reports">Email Reports</a></li>
+      </ul>
+      <a href="../index.html" style="font-weight: 600; color: var(--rust); text-decoration: none;">&larr; Back to Hub</a>
+    </aside>
+
+    <main class="docs-content">
+      <section class="docs-section" id="welcome">
+        <h2>Welcome to oz-pos</h2>
+        <p>
+          This User Manual provides step-by-step guides for store managers, cashiers, and shop owners. 
+        </p>
+      </section>
+
+      <section class="docs-section" id="stores">
+        <h2>Managing Stores</h2>
+        <p>
+          Configure and add store outlets from your central administrator panel. You can define location-based metadata, warehouse assignments, inventory thresholds, and active terminals.
+        </p>
+      </section>
+
+      <section class="docs-section" id="cashiers">
+        <h2>Cashier Shifts</h2>
+        <p>
+          At the start of every cashier shift, cashiers open a shift register session. The cash drawer amount is logged, and cashiers can execute checkouts. Every event is recorded in a secure, audit-friendly ledger.
+        </p>
+      </section>
+
+      <section class="docs-section" id="reports">
+        <h2>Email Reports</h2>
+        <p>
+          oz-pos generates automated business intelligence summaries. You can receive daily, weekly, or monthly PDF digests directly in your mailbox showing total sales, tax calculations, top selling items, and cashier transaction audits.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../../../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation Hub | oz-pos</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .hub-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .hub-header {
+      margin-bottom: 4rem;
+    }
+    .hub-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .hub-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .hub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      text-decoration: none;
+      color: inherit;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .hub-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--rust);
+      box-shadow: 0 10px 30px rgba(247, 76, 0, 0.15);
+    }
+    .hub-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .hub-card h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hub-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../architecture.html">Architecture</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="index.html" style="color: var(--text-main);">Documentation</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+      </ul>
+      <a href="../pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <main class="hub-container">
+    <div class="hub-header">
+      <h1>Documentation Hub</h1>
+      <p class="tagline">Select a portal to explore resources, setup guides, and APIs.</p>
+    </div>
+
+    <div class="hub-grid">
+      <!-- User Manual Card -->
+      <a href="user/index.html" class="hub-card">
+        <div>
+          <div class="hub-icon">📖</div>
+          <h2>User Manual</h2>
+          <p>Guides for store owners, managers, and cashiers. Learn how to manage inventory, shifts, and view analytics reports.</p>
+        </div>
+        <span class="btn btn-secondary">Explore User Guides</span>
+      </a>
+
+      <!-- Developer Portal Card -->
+      <a href="developer/index.html" class="hub-card">
+        <div>
+          <div class="hub-icon">🛠️</div>
+          <h2>Developer Portal</h2>
+          <p>Technical integration resources including Rust core details, Tauri configuration pipelines, and Lua white-label scripting APIs.</p>
+        </div>
+        <span class="btn btn-primary">Explore Developer Docs</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

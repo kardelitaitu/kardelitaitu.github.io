@@ -1,0 +1,159 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lua Scripting | oz-pos Documentation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .docs-wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+    }
+    .docs-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 2rem;
+      height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+    .docs-sidebar h3 {
+      font-size: 0.9rem;
+      color: var(--rust);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .docs-sidebar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .docs-sidebar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .docs-sidebar a:hover {
+      color: var(--text-main);
+    }
+    .docs-content {
+      flex: 1;
+      padding-bottom: 5rem;
+    }
+    .docs-section {
+      margin-bottom: 4rem;
+    }
+    .docs-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .docs-section p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    code {
+      font-family: 'Fira Code', monospace;
+      background: rgba(255,255,255,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--rust);
+      font-size: 0.9em;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    pre {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="../../index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../architecture.html">Architecture</a></li>
+        <li><a href="../../pricing.html">Pricing</a></li>
+        <li><a href="../index.html" style="color: var(--text-main);">Documentation</a></li>
+        <li><a href="../../contact.html">Contact Us</a></li>
+      </ul>
+      <a href="../../pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <div class="docs-wrapper">
+    <aside class="docs-sidebar">
+      <h3>Developer Docs</h3>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="rust-api.html">Rust Core API</a></li>
+        <li><a href="tauri-setup.html">Tauri desktop UI</a></li>
+        <li><a href="lua-scripting.html" style="color: var(--text-main);">Lua configuration</a></li>
+      </ul>
+      <a href="../index.html" style="font-weight: 600; color: var(--rust); text-decoration: none;">&larr; Back to Hub</a>
+    </aside>
+
+    <main class="docs-content">
+      <section class="docs-section">
+        <h2>Lua Configuration & White-Label Customization</h2>
+        <p>
+          The embedded Lua engine executes configurations at launch and dynamic checkout calculations during execution.
+        </p>
+
+        <h2>White-Label Schema</h2>
+        <p>
+          Define branding assets and colors directly in the global config table inside <code>config.lua</code>.
+        </p>
+        <pre><code>config.white_label = {
+    brand_color = "#ea580c",
+    receipt_header = "Welcome to Our Premium Store!",
+    show_logo = true
+}</code></pre>
+
+        <h2>Dynamic Price Rules</h2>
+        <p>
+          You can write standard Lua functions to control shopping cart promotions. The core invokes <code>calculate_discount(cart)</code> on transaction change.
+        </p>
+        <pre><code>function calculate_discount(cart)
+    -- Apply 10% discount on transaction value if over $100
+    if cart.total > 100.00 then
+        return cart.total * 0.10
+    end
+    return 0.0
+end</code></pre>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../../../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
