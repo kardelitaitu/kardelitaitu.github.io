@@ -1,0 +1,130 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture | oz-pos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .arch-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .arch-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .arch-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .arch-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .arch-block h2 {
+      font-size: 1.75rem;
+      color: var(--rust);
+      margin-bottom: 1rem;
+    }
+    .arch-block p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    .diagram-node {
+      background: rgba(247, 76, 0, 0.1);
+      border: 1px solid var(--rust);
+      color: var(--text-main);
+      padding: 1.25rem 2rem;
+      border-radius: 12px;
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(247, 76, 0, 0.2);
+    }
+    .diagram-arrow {
+      color: var(--text-muted);
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="architecture.html" style="color: var(--text-main);">Architecture</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="docs.html">Documentation</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <a href="pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <main class="arch-container">
+    <div class="arch-header">
+      <h1>System Architecture</h1>
+      <p class="tagline">Explore how the modular core integrates with the white-label custom script engine.</p>
+    </div>
+
+    <div class="arch-block">
+      <h2>High-Performance Rust Core</h2>
+      <p>
+        At the heart of <strong>oz-pos</strong> is a compiled Rust engine. Rust guarantees memory safety, zero-cost abstractions, and sub-millisecond execution speeds for critical checkout routines. The core manages inventory indexing, sqlite-backed transactions, local cashier security, and database write queues.
+      </p>
+    </div>
+
+    <div class="diagram">
+      <div class="diagram-node">Web Client / Native Hardware UI</div>
+      <div class="diagram-arrow">&darr;</div>
+      <div class="diagram-node" style="background: rgba(59, 130, 246, 0.1); border-color: var(--blue);">Embedded Lua Interpreter (White-Label)</div>
+      <div class="diagram-arrow">&darr;</div>
+      <div class="diagram-node">Rust Transaction Core (SQLite)</div>
+      <div class="diagram-arrow">&darr;</div>
+      <div class="diagram-node" style="background: rgba(39, 201, 63, 0.1); border-color: #27c93f;">Cloud Sync Engine (gRPC/WebSockets)</div>
+    </div>
+
+    <div class="arch-block">
+      <h2>Lua Customization Layer</h2>
+      <p>
+        Rather than recompiling the system for every white-label custom client, <strong>oz-pos</strong> embeds a sandboxed Lua interpreter. This interpreter loads local <code>config.lua</code> scripts to modify receipt headers, custom branding colors, and dynamically override billing or pricing logic (like promotions and tax rates) instantly at runtime.
+      </p>
+    </div>
+
+    <div class="arch-block">
+      <h2>Offline-First Cloud Sync</h2>
+      <p>
+        Our cloud synchronization engine works background threads. If network connectivity is lost, sales queues are stored securely in local SQLite databases. Once internet connection returns, the system automatically uses a lightweight delta sync protocol to upload logs and update stock levels without cashier interruptions.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

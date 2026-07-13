@@ -1,0 +1,186 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans | oz-pos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pricing-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .pricing-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .price-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: var(--rust);
+      box-shadow: 0 10px 30px rgba(247, 76, 0, 0.15);
+    }
+    .price-card.featured::before {
+      content: "RECOMMENDED";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--rust);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+    }
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .price-card.featured:hover {
+      border-color: var(--rust);
+      box-shadow: 0 15px 40px rgba(247, 76, 0, 0.25);
+    }
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .plan-price {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+    .plan-price span {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .features-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      color: var(--text-muted);
+    }
+    .features-list li::before {
+      content: "✓ ";
+      color: var(--rust);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="pricing.html" style="color: var(--text-main);">Pricing</a></li>
+        <li><a href="docs.html">Documentation</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <a href="pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <main class="pricing-container">
+    <div class="pricing-header">
+      <h1>Subscription Plans</h1>
+      <p class="tagline">Flexible licensing tiers tailored to your store operations.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter Plan -->
+      <div class="price-card">
+        <div>
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">$29<span>/mo</span></div>
+          <ul class="features-list">
+            <li>Single Store License</li>
+            <li>Up to 2 Active Cashiers</li>
+            <li>Basic Inventory Management</li>
+            <li>Offline Checkout Support</li>
+            <li>Weekly Email Reports</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-secondary">Get Started</a>
+      </div>
+
+      <!-- Growth Plan -->
+      <div class="price-card featured">
+        <div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price">$79<span>/mo</span></div>
+          <ul class="features-list">
+            <li>Up to 5 Store Outlets</li>
+            <li>Unlimited Cashier Registers</li>
+            <li>Advanced Inventory Tracking</li>
+            <li>Realtime Cloud Synchronization</li>
+            <li>Daily Scheduled Email Reports</li>
+            <li>Live Sales Analytics</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Subscribe Now</a>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="price-card">
+        <div>
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">$199<span>/mo</span></div>
+          <ul class="features-list">
+            <li>Unlimited Store Outlets</li>
+            <li>Full White-Label Branding</li>
+            <li>Custom Lua Modularity Engines</li>
+            <li>Realtime Live Dashboards</li>
+            <li>Detailed Staff Activity Audits</li>
+            <li>Dedicated SaaS Hosting & API</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-secondary">Contact Enterprise</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

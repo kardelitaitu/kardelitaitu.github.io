@@ -1,0 +1,126 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | oz-pos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .contact-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .contact-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem;
+      backdrop-filter: blur(10px);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .form-group input, .form-group textarea {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem;
+      font-family: inherit;
+      color: var(--text-main);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--rust);
+      box-shadow: 0 0 10px rgba(247, 76, 0, 0.2);
+    }
+    .btn-submit {
+      width: 100%;
+      background: var(--rust);
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 1rem;
+    }
+    .btn-submit:hover {
+      box-shadow: 0 8px 25px rgba(247, 76, 0, 0.4);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">oz-<span>pos</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="docs.html">Documentation</a></li>
+        <li><a href="contact.html" style="color: var(--text-main);">Contact Us</a></li>
+      </ul>
+      <a href="pricing.html" class="btn-github">Book a Demo</a>
+    </div>
+  </header>
+
+  <main class="contact-container">
+    <div class="contact-header">
+      <h1>Get in Touch</h1>
+      <p class="tagline">Contact our enterprise sales or request a customized demo.</p>
+    </div>
+
+    <div class="contact-card">
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Request sent! Our team will contact you shortly.');">
+        <div class="form-group">
+          <label for="name">Company Name</label>
+          <input type="text" id="name" required placeholder="Acme Retailers">
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" required placeholder="contact@acme.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Message / Details</label>
+          <textarea id="message" rows="5" required placeholder="Tell us about your store outlets size and customization preferences..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Request</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 oz-pos Project. All rights reserved.</p>
+      <p>Created by <a href="../">kardelitaitu</a> | <a href="https://github.com/kardelitaitu" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
