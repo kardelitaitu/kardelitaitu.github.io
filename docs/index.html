@@ -15,17 +15,14 @@ description: Index of websites and projects hosted by kardelitaitu.
 
 <section class="features-section" id="projects">
   <div class="grid" style="max-width: 800px; margin: 0 auto;">
-    <!-- Card 1 -->
-    <a href="portfolio/" style="text-decoration: none; color: inherit;" class="card">
-      <div class="card-icon">⚡</div>
-      <h3>Developer Portfolio</h3>
-      <p>Personal creative space showcasing projects, skills, and experience.</p>
-    </a>
-    <!-- Card 2 -->
-    <a href="dashboard/" style="text-decoration: none; color: inherit;" class="card">
-      <div class="card-icon">📊</div>
-      <h3>Analytics Dashboard</h3>
-      <p>Interactive dashboard prototype featuring dynamic status updates and mock stats.</p>
-    </a>
+    {% for p in site.pages %}
+      {% if p.url != '/' and p.icon %}
+        <a href="{{ p.url | relative_url }}" style="text-decoration: none; color: inherit;" class="card">
+          <div class="card-icon">{{ p.icon }}</div>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
+        </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
