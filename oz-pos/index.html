@@ -17,22 +17,22 @@ description: Rust modular Point of Sales system supporting multi-store, multi-ca
   <header>
     <div class="nav-container">
       <a href="#" class="logo">oz-<span>pos</span></a>
-      <a href="https://github.com/kardelitaitu" target="_blank" class="btn-github">GitHub</a>
+      <a href="#pricing" class="btn-github">Book a Demo</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="badge">Built in Rust</div>
+      <div class="badge">Enterprise SaaS</div>
       <h1>
         Modular <span>Point of Sales</span><br>
-        Built for Modern Scale
+        Built for Modern Retail
       </h1>
       <p class="tagline">
-        A lightning-fast, secure, and fully modular POS platform supporting multi-store setups, cashier logs, realtime inventory tracking, advanced analytics, and offline-first cloud synchronization.
+        A premium, offline-first POS platform. Manage multi-store networks, cashiers, live inventory, and synced analytics with full white-label capabilities for your brand.
       </p>
       <div class="cta-group">
-        <a href="https://github.com/kardelitaitu" target="_blank" class="btn btn-primary">Get Started</a>
+        <a href="#pricing" class="btn btn-primary">Subscribe Now</a>
         <a href="../" class="btn btn-secondary">Back to Portal</a>
       </div>
     </section>
@@ -64,28 +64,43 @@ description: Rust modular Point of Sales system supporting multi-store, multi-ca
     </section>
 
     <section class="code-preview">
-      <h2 class="section-title">Modular Rust Architecture</h2>
+      <h2 class="section-title">White Label Customization via Lua</h2>
       <div class="code-window">
         <div class="code-header">
           <div class="dot dot-red"></div>
           <div class="dot dot-yellow"></div>
           <div class="dot dot-green"></div>
         </div>
-        <pre><code><span class="comment">// Example module composition in Main</span>
-<span class="keyword">use</span> oz_pos::{StoreManager, InventoryModule, CloudSync};
+        <pre><code><span class="comment">-- config.lua - Customize your brand & business rules</span>
+<span class="keyword">local</span> config = {
+  shop_name = <span class="string">"Premium Retailers"</span>,
+  white_label = {
+    brand_color = <span class="string">"#ea580c"</span>,
+    receipt_header = <span class="string">"Welcome to Our Premium Store!"</span>,
+    show_logo = <span class="keyword">true</span>,
+  },
+  billing = {
+    currency = <span class="string">"USD"</span>,
+    tax_rate = <span class="keyword">0.08</span>, <span class="comment">-- 8% sales tax</span>
+  },
+  modules = {
+    inventory = <span class="keyword">true</span>,
+    cashier_audit = <span class="keyword">true</span>,
+    analytics = <span class="keyword">true</span>,
+    cloud_sync = {
+      enabled = <span class="keyword">true</span>,
+      interval_seconds = <span class="keyword">60</span>,
+    }
+  }
+}
 
-<span class="attribute">#[tokio::main]</span>
-<span class="keyword">async fn</span> <span class="keyword">main</span>() -> Result&lt;(), Box&lt;<span class="keyword">dyn</span> std::error::Error&gt;&gt; {
-    <span class="comment">// Load store and cashier configurations</span>
-    <span class="keyword">let</span> store = StoreManager::<span class="type">init</span>(<span class="string">"./config/store.json"</span>).<span class="keyword">await</span>?;
-    
-    <span class="comment">// Mount modules dynamically</span>
-    store.register_module(InventoryModule::<span class="type">new</span>())?;
-    store.register_module(CloudSync::<span class="type">new</span>(SyncInterval::<span class="type">Realtime</span>))?;
-
-    store.run().<span class="keyword">await</span>?;
-    <span class="type">Ok</span>(())
-}</code></pre>
+<span class="comment">-- Script custom dynamic business behaviors</span>
+<span class="keyword">function</span> <span class="type">calculate_discount</span>(cart)
+  <span class="keyword">if</span> cart.total &gt; <span class="keyword">100.00</span> <span class="keyword">then</span>
+    <span class="keyword">return</span> cart.total * <span class="keyword">0.10</span> <span class="comment">-- 10% off orders &gt; $100</span>
+  <span class="keyword">end</span>
+  <span class="keyword">return</span> <span class="keyword">0.0</span>
+<span class="keyword">end</span></code></pre>
       </div>
     </section>
   </main>
